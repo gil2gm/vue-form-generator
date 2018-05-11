@@ -1,5 +1,5 @@
 <template lang="pug">
-	multiselect(
+multiselect(
 		:id="selectOptions.id",
 		:options="options",
 		:value="value",
@@ -32,15 +32,13 @@
 		:disabled="disabled",
 		:max-height="selectOptions.maxHeight",
 		:show-pointer="selectOptions.showPointer",
-		@input="updateSelected",
-		@select="onSelect",
-		@remove="onRemove",
-		@search-change="onSearchChange",
-		@tag="addTag",
-		@open="onOpen",
-		@close="onClose",
-		:option-height="selectOptions.optionHeight",
-	)
+		@input="updateSelected",	@select="onSelect",	@remove="onRemove",	@search-change="onSearchChange",	@tag="addTag",	@open="onOpen",	@close="onClose",
+		:option-height="selectOptions.optionHeight", 
+    :tabindex="selectOptions.tabindex",
+    :open-direction="selectOptions.openDirection",
+    :preselect-first="selectOptions.preselectFirst || false",
+    :group-select="selectOptions.groupSelect"
+)
 </template>
 <script>
 	import abstractField from "../abstractField";
